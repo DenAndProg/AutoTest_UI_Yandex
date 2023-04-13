@@ -9,13 +9,13 @@ import org.openqa.selenium.By;
 import InitialDriver.InitialDriver;
 import org.openqa.selenium.NoSuchElementException;
 
-
+@DisplayName("Тесты")
 public class TestFront {
 
     @ParameterizedTest
     @DisplayName("Логин на яндекс почту")
     @ValueSource(strings = { "Chrome"/*, "FireFox"*/ })
-    void signInYandex(String name){
+    void TestsignInYandex(String name){
         Methods.getMainPage(name);
         Methods.findElementAndClick(ByLocator.close);
         Methods.findElementAndClick(By.xpath("/html/body/main/div[1]/div/a[1]"));
@@ -30,7 +30,7 @@ public class TestFront {
     @ParameterizedTest
     @DisplayName("Невалидный пароль")
     @ValueSource(strings = { "Chrome", "FireFox" })
-    void noSignInYandex(String name){
+    void TestnoSignInYandex(String name){
         Methods.getMainPage(name);
         Methods.findElementAndClick(ByLocator.close);
         Methods.findElementAndClick(By.xpath("/html/body/main/div[1]/div/a[1]"));
@@ -45,7 +45,7 @@ public class TestFront {
     @ParameterizedTest
     @DisplayName("Невалидный логин")
     @ValueSource(strings = { "Chrome", "FireFox" })
-    void noValidLoginYandex(String name){
+    void TestnoValidLoginYandex(String name){
         Methods.getMainPage(name);
         Methods.findElementAndClick(ByLocator.close);
         Methods.findElementAndClick(By.xpath("/html/body/main/div[1]/div/a[1]"));
@@ -58,7 +58,7 @@ public class TestFront {
     @ParameterizedTest
     @DisplayName("Кнопки")
     @ValueSource(strings = { "FireFox" })
-    void buttons(String name) throws InterruptedException {
+    void Testbuttons(String name) throws InterruptedException {
         Methods.getMainPage(name);
         //Methods.findElementAndClick(ByLocator.close);
         Methods.findElementAndClick(By.xpath("//*[@id=\"text\"]"));
